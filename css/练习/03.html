@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style/reset.css">
+    <style>
+        body {
+            background-color: #bfa;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .news-wrapper {
+            width: 300px;
+            height: 357px;
+            background-color: #fff;
+            margin: 50px auto;
+            border-top: 1px solid #ddd;
+        }
+        
+        .new-header {
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            margin-top: -1px;
+            border-top: 1px solid red;
+        }
+        
+        .new-header a {
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .new-img {
+            height: 150px;
+        }
+        
+        .new-img a h3 {
+            color: #fff;
+            font-weight: bold;
+            margin-top: -30px;
+            margin-left: 30px;
+        }
+        
+        .news-list {
+            margin-top: 20px;
+        }
+        
+        .news-list li {
+            margin-bottom: 17px;
+        }
+        
+        .news-list li::before {
+            content: "■";
+            font-size: 10px;
+            color: #acabab;
+            margin-right: 10px;
+        }
+        
+        .news-list li a {
+            color: #6a6a6a;
+            font-size: 12px;
+        }
+        
+        .news-list li a:hover {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="news-wrapper">
+        <h2 class="new-header">
+            <a href="#">新闻</a>
+        </h2>
+        <div class="new-img">
+            <a href="#">
+                <img src="news.jpg" alt="">
+                <h3>31岁击剑奥运名将大婚 娇妻高颜值</h3>
+            </a>
+        </div>
+        <ul class="news-list">
+            <li><a href="#">当年奥神退出CBA，是什么情况？</a></li>
+            <li><a href="#">阿尔特塔之后，瓜迪奥拉又培养出一个榜首</a></li>
+            <li><a href="#">每一方都是输家，中国篮球陷入死局</a></li>
+            <li><a href="#">女足国脚在巴黎:我还没踢够</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

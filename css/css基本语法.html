@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* p[title$=abc] {
+            color: green;
+            font-size: 20px;
+        } */
+        /* ul>li:first-of-type {
+            color: red;
+        } */
+        /* ul>li:last-child {
+            color: red;
+        }
+        
+        ul>li:nth-child(odd) {
+            color: red;
+        } */
+        
+        ul>li:not(:nth-child(3)) {
+            color: green;
+        }
+        
+        a:link {
+            color: red;
+        }
+        
+        a:visited {
+            color: green;
+        }
+        
+        a:hover {
+            font-size: 20px;
+        }
+        
+        a:active {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://www.baidu.com">baidu</a>
+    <br>
+    <br>
+    <a href="www.baidu123.com">baidu123</a>
+    <p title="abc">少小离家老大回</p>
+    <p title="abcdef">乡音无改鬓毛衰</p>
+    <p title="defabc">儿童相见不相识</p>
+    <P>笑问客从何处来</P>
+    <ul>
+        <span>第0个</span>
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+        <li>第四个</li>
+        <li>第五个</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="01.js"></script> -->
+    <script>
+        // debugger
+        // 匿名函数
+        // (function() {
+        //     // alert('哈哈哈哈')
+        //     console.log('第一个方法');
+        // }());
+        // (function() {
+        //     // alert('第二个方法')
+        //     console.log('第二个方法');
+        // }())
+
+        // function test() {
+        //     console.log(this);
+        //     console.log(this === window);
+        // }
+        // test()
+
+        // let a = () => 1 + 2;
+        // console.log(a());
+
+        function fn() {
+            console.log(this);
+        }
+        const fn2 = () => {
+            console.log(this);
+        }
+        const obj = {
+            name: '孙悟空',
+            fn,
+            fn2,
+            sayhello() {
+                console.log(this.name);
+                const fn3 = () => {
+                    console.log(this);
+                }
+                fn3()
+
+                function fn4() {
+                    console.log(this);
+                }
+                fn4()
+            }
+        }
+        fn() // window
+        fn2() // window
+        obj.fn() // obj
+        obj.fn2() // window
+        obj.sayhello()
+    </script>
+</head>
+
+<body>
+    <!-- <button onclick="alert('点击')">点击</button>
+    <a href="javascript:alert('点击')">点击</a> -->
+</body>
+
+</html>

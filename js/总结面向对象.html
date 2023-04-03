@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Person {
+        constructor(name, age) {
+            this.name = name
+            this.age = age
+        }
+    }
+    const personArr = [
+            new Person('孙悟空', 18),
+            new Person('沙和尚', 28),
+            new Person('红孩儿', 8)
+        ]
+        // 遍历数组并打印未成年的信息
+    for (let i = 0; i < personArr.length; i++) {
+        if (personArr[i].age < 18) {
+            console.log(personArr[i]);
+        }
+    }
+    for (let value of personArr) {
+        console.log(value);
+    }
+    for (let key in personArr) {
+        console.log(key);
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

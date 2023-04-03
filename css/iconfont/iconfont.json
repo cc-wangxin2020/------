@@ -1,0 +1,135 @@
+{
+  "id": "2432117",
+  "name": "lotusnet",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2154470",
+      "name": "44_点点点",
+      "font_class": "diandiandianshu",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "680507",
+      "name": "警示",
+      "font_class": "jingshi",
+      "unicode": "e6ea",
+      "unicode_decimal": 59114
+    },
+    {
+      "icon_id": "435974",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e7e1",
+      "unicode_decimal": 59361
+    },
+    {
+      "icon_id": "1240773",
+      "name": "图片",
+      "font_class": "tupian1",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "15726932",
+      "name": "图片",
+      "font_class": "tupian2",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "12687165",
+      "name": "发送",
+      "font_class": "icon-",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "14122668",
+      "name": "发送",
+      "font_class": "fasong",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "14434800",
+      "name": "发送",
+      "font_class": "fasong1",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "16388248",
+      "name": "表情",
+      "font_class": "biaoqing4",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "19465420",
+      "name": "表情",
+      "font_class": "biaoqing6",
+      "unicode": "f0f4",
+      "unicode_decimal": 61684
+    },
+    {
+      "icon_id": "886694",
+      "name": "表情",
+      "font_class": "biaoqing1",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "8219237",
+      "name": "表情",
+      "font_class": "biaoqing2",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "16661755",
+      "name": "表情",
+      "font_class": "biaoqing3",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "577312",
+      "name": "加号",
+      "font_class": "jiahao",
+      "unicode": "e726",
+      "unicode_decimal": 59174
+    },
+    {
+      "icon_id": "1111314",
+      "name": "语音",
+      "font_class": "yuyin",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "10463853",
+      "name": "表情",
+      "font_class": "biaoqing",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "3273252",
+      "name": "点点点",
+      "font_class": "diandiandian",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "14660379",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    }
+  ]
+}

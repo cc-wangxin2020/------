@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        'use strict'
+        const five = {
+            name: '王老五',
+            age: 18,
+            height: 180,
+            weight: 100,
+            sleep() {
+                console.log(this.name, '碎觉');
+            },
+            run() {
+                console.log(this.name, '跑~~');
+            }
+        }
+        five.sleep()
+        five.run()
+
+        // 类
+        class Person {
+            // 类的代码块默认就是严格模式
+            name = '孙悟空'
+            age = 18
+                // static test = '静态属性' // 静态属性（类属性）
+                // static test1 = 'test1'
+            sayhello() {
+                console.log(this.name);
+            }
+            static test() {
+                console.log('静态方法');
+            }
+        }
+        const p1 = new Person() // 构造对象
+        const p2 = new Person()
+        p1.sayhello()
+            // console.log(p1);
+            // console.log(p2);
+            // console.log(Person.test, Person.test1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
