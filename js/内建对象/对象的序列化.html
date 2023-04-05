@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 对象的序列化
+         *   - JS中的对象使用时都是存在于计算机的内存中的
+         *   - 序列化指将对象转换为一个可以存储的个格式
+         *       在JS中对象的序列化通常是将一个对象转换为字符串（JSON字符串）
+         *   - 序列化的用途
+         *      - 对象转换为字符串后，可以将字符串在不同的语言之间进行传递
+         *   - 如何进行序列化
+         *      - 在JS中有一个工具类JSON（JavaScript Object Notation） JS对象表示法
+         *      
+         *   - 也可以手动编写JSON字符串
+         *   - 
+         *  
+         */
+        const obj = {
+            name: 'Tom',
+            age: 18
+        }
+        const str = JSON.stringify(obj)
+        const obj2 = JSON.parse(str)
+        console.log(obj);
+        console.log(str, typeof str);
+        console.log(obj2);
+        const str2 = '{"name":"Tom", "age":28}'
+        const str3 = '["name":"Tom", "age":28]'
+        console.log(str2);
+        console.log(str3);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

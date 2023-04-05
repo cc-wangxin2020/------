@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 调用函数除了通过函数() 这种形式外，还可以通过其他的方式来调用函数
+         * 比如，可以通过函数的call()和apply()两个方法来调用函数
+         * 函数.call()
+         * 函数.apply()
+         * -call和apply除了可以调用函数，还可以用来指定函数的this
+         * -call和apply的第一个参数将会成为函数的this
+         * 通过call方法调用函数，函数的实参直接在第一个参数后一个一个的列出来
+         * 通过apply方法调用函数，函数的实参需要通过一个数组传递
+         * 
+         */
+        let obj = {
+            name: 'Tom',
+            age: 18
+        }
+
+        function fn() {
+            console.log('fn', this);
+        }
+        fn.apply(obj)
+        fn.call(obj)
+
+        function fn2(a, b) {
+            console.log('fn2', a, b, this);
+        }
+
+        fn2.call(obj, 1, 2)
+        fn2.apply(obj, [1, 2])
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
