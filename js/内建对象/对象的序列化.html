@@ -17,23 +17,52 @@
          *   - 如何进行序列化
          *      - 在JS中有一个工具类JSON（JavaScript Object Notation） JS对象表示法
          *      
-         *   - 也可以手动编写JSON字符串
-         *   - 
-         *  
+         *   - 也可以手动编写JSON字符串，很多程序的配置文件就是用JSON格式编写的
+         *   - 编写JSON的注意事项：
+         *      1. JSON字符串有两种类型
+         *           JSON对象{}
+         *           JSON数组[]
+         *      2. JSON字符串的属性名必须使用双引号引起来
+         *      3. JSON中可以使用的属性值（元素）
+         *         - 数字（Number）
+         *         - 字符串（String）
+         *         - 布尔值（Boolean）
+         *         - 对象 （Object {}）
+         *         - 数组 （Array []）
+         *      4. JSON的格式和JS对象的格式基本上一致
+         *         注意：JSON字符串如果属性是最后一个，则不要加, 
          */
         const obj = {
-            name: 'Tom',
-            age: 18
-        }
+                name: 'Tom',
+                age: 18
+            }
+            // 将对象转化成JSON字符串
         const str = JSON.stringify(obj)
+            // 将JSON字符串装换为JS格式
         const obj2 = JSON.parse(str)
         console.log(obj);
         console.log(str, typeof str);
         console.log(obj2);
         const str2 = '{"name":"Tom", "age":28}'
-        const str3 = '["name":"Tom", "age":28]'
+        const str3 = '["name", 18, true, null, [1,2,3,4,5]]'
         console.log(str2);
         console.log(str3);
+        /*
+        可以使用JSON来对对象进行深复制 
+         */
+        const obj3 = {
+                name: 'Tom',
+                friend: {
+                    name: 'Mary'
+                }
+            }
+            // 对obj3进行深复制
+        const obj4 = Object.assign({}, obj3)
+            //  对obj3进行深复制
+        const obj5 = structuredClone(obj3)
+
+        // 利用JSON进行深复制
+        const obj6 = JSON.parse(JSON.stringify(obj3))
     </script>
 </head>
 

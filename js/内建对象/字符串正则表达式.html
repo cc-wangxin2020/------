@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * split()
+         *      可以根据正则表达式来对一个字符串进行拆分
+         * search()
+         *      可以去搜索符合正则表达式的内容第一次在字符串出现的位置
+         * replace()
+         *      根据正则表达式替换字符串中的指定内容
+         * match()
+         *      根据正则表达式去匹配字符串中符合要求的内容
+         * matchAll()
+         *      根据正则表达式去匹配字符串中符合要求的内容（必须设置g 全局匹配）
+         *      返回一个迭代器     
+         */
+        let str = 'a@b@c'
+        let result = str.split('@')
+        console.log(result);
+        str = 'TomabcMaryafcJary'
+        result = str.split(/a[bf]c/)
+        console.log(result);
+        str = 'qerngf18336946096vin13569312175evlwqo12345678901iejfioer'
+            // result = str.search(/1[3-9]\d{9}/)
+            // console.log(result);
+            // result = str.replace(/1[3-9]\d{9}/g, '@')
+            // console.log(result);
+        result = str.match(/1[3-9]\d{9}/g)
+        console.log(result);
+        result = str.matchAll(/1[3-9]\d{9}/g)
+        console.log(result);
+        for (let i of result) {
+            console.log(i);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

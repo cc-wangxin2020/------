@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 正则表达式
+         *      - 正则表达式用来定义一个规则
+         *      - 通过这个规则计算机可以检查一个字符串是否符合规则
+         *          或者将字符串中符合规则的内容提取出来
+         *      - 正则表达式也是JS中的一个对象，
+         *          所以要使用正则表达式，需要先创建正则表达式的对象
+         * 1. 在正则表达式中大部分字符都可以直接写
+         * 2. | 在正则表达式中共表示或
+         * 3. [] 表示字符集
+         * 4. [^] 表示除了字符集
+         * 5. . 表示除了换行外的任意字符
+         * 6. 在正则表达式中使用\作为转义字符
+         * 7. 其他字符集
+         *      \w 任意单词字符 [A-Za-z0-9_]
+         *      \W 除了单词字符 [^A-Za-z0-9_]
+         *      \d 任意数字 [0-9]
+         *      \D 除了数字 [^0-9]
+         *      \s 空格
+         *      \S 除了空格
+         *      \b 单词边界
+         *      \B 除了单词边界
+         * 8. 开头和结尾
+         *      ^ 表示字符串的开头
+         *      $ 表示字符串的结尾
+         */
+        /**
+         * 量词
+         *      {m} 正好m个
+         *      {m,} 至少m个
+         *      {m, n} m-n个
+         *      + 一个以上
+         *      * 任意数量 
+         *      ？最多一次
+         */
+        let re = /abc|bcd/
+        console.log(re.test('abc'));
+        let re2 = /(ab){3}/
+        re2 = /^[a-z]{3}/
+        console.log(re2.test('aaa'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

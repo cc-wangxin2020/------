@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 可以通过Date的相关方法得到想要的日期格式
+         * 
+         */
+        const d = new Date()
+            // 2023年4月
+        let date = d.toLocaleDateString('zh-CN', {
+                year: "numeric",
+                month: "long"
+            })
+            // 下午7:39:32
+        let time = d.toLocaleTimeString('zh-CN', {
+                hour12: "2-digit"
+            })
+            // 2023年4月05日周三
+        let date_time = d.toLocaleString('zh-CN', {
+            year: "numeric",
+            month: "long",
+            day: "2-digit",
+            weekday: "short"
+        })
+        console.log(date, time, date_time);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

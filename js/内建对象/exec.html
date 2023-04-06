@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         *  re.exec()
+         *      获取字符串中符合正则表达式的内容
+         */
+        let str = 'abcaecafcacc'
+        let re = /a([a-z])c/ig // 忽略大小写 全局匹配
+        console.log(re.exec(str));
+
+        /**
+         * 编写程序
+         *      取出字符串中的手机号
+         */
+        let str2 = 'qerngf18336946096vin13569312175evlwqo12345678901iejfioer'
+        re = /(1[3-9]\d)\d{4}(\d{4})/ig
+        let result = re.exec(str2)
+        while (result) {
+            console.log(result[1] + '****' + result[2]);
+            result = re.exec(str2)
+        }
+
+        // 检查手机号
+        re = /^1[3-9]\d{9}$/
+        console.log(re.test('18336946096'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
