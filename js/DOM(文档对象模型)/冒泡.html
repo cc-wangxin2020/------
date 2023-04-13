@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        
+        #box1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            border-radius: 50%;
+        }
+        
+        #box2 {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <script>
+        const box1 = document.querySelector('#box1')
+        const box2 = document.querySelector('#box2')
+        document.addEventListener('mousemove', event => {
+            box1.style.left = (event.x - 50) + 'px'
+            box1.style.top = (event.y - 50) + 'px'
+                // console.log(111, event.x, event.y);
+        })
+        box2.addEventListener('mousemove', event => {
+            event.stopPropagation()
+        })
+    </script>
+</body>
+
+</html>

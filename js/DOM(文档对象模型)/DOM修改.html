@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            const list = document.getElementById('list')
+            const btn01 = document.getElementById('btn01')
+            const btn02 = document.getElementById('btn02')
+            btn01.addEventListener('click', function() {
+                const li = document.createElement('li')
+                li.textContent = '唐僧'
+                li.id = 'ts'
+                    // list.appendChild(li)
+                    // list.insertAdjacentElement("afterbegin", li)
+                    // list.insertAdjacentElement("beforeend", li)
+                list.insertAdjacentHTML("beforeend", `<li id='bgj'>白骨精</li>`)
+            })
+            btn02.addEventListener('click', function() {
+                const li = document.createElement('li')
+                li.textContent = '蜘蛛精'
+                li.id = 'zzj'
+                const swk = document.getElementById('swk')
+                    // replaceWith() 用一个元素替换当前元素
+                    // swk.replaceWith(li)
+                swk.remove()
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn01">按钮1</button>
+    <button id="btn02">按钮2</button>
+    <hr>
+    <ul id="list">
+        <li id="swk">孙悟空</li>
+        <li id="zbj">猪八戒</li>
+        <li id="shs">沙和尚</li>
+    </ul>
+</body>
+
+</html>
