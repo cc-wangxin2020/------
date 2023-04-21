@@ -1,18 +1,8 @@
-// function twoSum(nums, target) {
-//     let hash = {}
-//     for (let i = 0; i < nums.length; i++) {
-//         if (hash[target - nums[i]] !== undefined) {
-//             console.log(hash);
-//             return [i, hash[target - nums[i]]]
-//         }
-//         hash[nums[i]] = i
-//     }
-// }
-// console.log(twoSum([9, 8, 5, 7, 2], 9));
-let value = document.getElementsByTagName('input')
-for (let i = 0; i < value.length; i++) {
-    if (i % 5 == 4) {
-        value[i].checked = true
+let table = document.getElementsByTagName('table')[0]
+let input = table.getElementsByTagName('input')
+for (let i = 0; i < input.length; i++) {
+    if (i % 5 === 0) {
+        input[i].checked = true
     }
 }
 
