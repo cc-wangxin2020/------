@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            const btn = document.getElementById('btn')
+            const list = document.getElementById('list')
+            const links = list.getElementsByTagName('a')
+            btn.onclick = function() {
+                list.insertAdjacentHTML('beforeend', `<li><a href="javascript:;">新员工</a></li>`)
+            }
+            document.addEventListener('click', (event) => {
+                if ([...links].includes(event.target)) {
+                    console.log(event.target.innerText);
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+    <ul id="list">
+        <li><a href="javascript:;">员工1</a></li>
+        <li><a href="javascript:;">员工2</a></li>
+        <li><a href="javascript:;">员工3</a></li>
+    </ul>
+</body>
+
+</html>

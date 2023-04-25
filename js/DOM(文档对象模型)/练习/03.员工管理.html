@@ -49,10 +49,15 @@
                 // console.log(tr);
                 // return false
             }
-            for (let i = 0; i < links.length; i++) {
-                links[i].onclick = delMumber
-            }
-            // 添加员工
+            // for (let i = 0; i < links.length; i++) {
+            //     links[i].onclick = delMumber
+            // }
+            document.addEventListener('click', (event) => {
+                    if ([...links].includes(event.target)) {
+                        event.target.onclick = delMumber
+                    }
+                })
+                // 添加员工
             addBtn.addEventListener('click', function() {
                     // 获取姓名
                     const name = document.getElementById('name').value
@@ -62,13 +67,13 @@
                     const salary = document.getElementById('salary').value
 
                     tbody.insertAdjacentHTML("beforeend",
-                        `<tr>
+                            `<tr>
                     <th>${name}</th>
                     <th>${email}</th>
                     <th>${salary}</th>
                     <th><a href="javascript:;">删除</a></th>
                 </tr>`)
-                    links[links.length - 1].onclick = delMumber
+                        // links[links.length - 1].onclick = delMumber
                 })
                 // links[links.length - 1].onclick = delMumber
         })
