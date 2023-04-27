@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /**
+         * 事件循环（event loop）
+         *      - 函数在每次执行时，都会产生一个执行环境
+         *      - 执行环境负责存储函数执行时产生的一切数据
+         *      - 函数的执行环境存储到了调用栈
+         *      - 栈——一种数据结构，先进后出
+         *  调用栈（call stack）
+         *      - 调用栈负责存储函数的执行环境
+         *      - 当函数被调用时，它的执行环境会作为一个栈帧
+         *          插入到调用栈的栈顶，函数执行完毕其栈帧会自动从栈中弹出
+         *  消息队列
+         *      - 消息队列负责存储将要执行的函数
+         *      - 当触发一个事件时，其响应函数先到消息队列中排队，等调用栈变空后再添加到调用栈中
+         */
+        function fn() {
+            let a = 10
+            let b = 20
+
+            function fn2() {
+                console.log('fn2');
+            }
+            fn2()
+        }
+        fn()
+    </script>
+</head>
+
+<body>
+    <button id="btn">点击</button>
+</body>
+
+</html>
