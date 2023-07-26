@@ -58,6 +58,28 @@
         #next {
             right: 0;
         }
+        .dot{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: 10px auto;
+            z-index: 2;
+        }
+        .dot a{
+            width: 10px;
+            height: 10px;
+            margin: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: .6;
+        }
+        .dot a:hover, 
+        .dot .active{
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -96,6 +118,14 @@
                 < </a>
                     <a href="javascript:;" id="next">></a>
         </div>
+        <!-- 导航点 -->
+        <div class="dot">
+            <a class="active" href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
     </div>
     <script>
         const toggleChange = (function () {
@@ -133,18 +163,37 @@
         })
 
         function changeImg(dir) {
+            const img_list = Array.from(document.querySelectorAll('.img-list li'))
             const current = document.querySelector('.img-list .current')
+    
             let change
             if (dir == 'next') {
-                change = current.nextElementSibling || document.getElementsByTagName('li')[0]
+                change = current.nextElementSibling || img_list[0]
             }
-            if (dir == 'prev') {
-                change = current.previousElementSibling ||
-                    document.querySelector("li:first-child")
+            else if (dir == 'prev') {
+                change = current.previousElementSibling || img_list.at(-1)
+            } else {
+                change = img_list[dir]
             }
+            // 获取要显示的图片索引
+            const index = img_list.indexOf(change)
+            // 切换显示状态
             current.classList.remove('current')
             change.classList.add('current')
+            // 切换active
+            const currentdot = document.querySelector('.dot .active')
+            currentdot.classList.remove('active')
+            dots[index].classList.add('active')
         }
+
+        const dots = Array.from(document.querySelectorAll('.dot a'))
+        document.addEventListener('click', function(event){
+            index = dots.indexOf(event.target)
+            if(index !== -1){
+                changeImg(index)
+            }
+        })
+
     </script>
 </body>
 
