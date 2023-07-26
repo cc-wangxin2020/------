@@ -43,13 +43,14 @@
             //     }
             // }, 1000)
             // console.time()
-            // setTimeout(function fn() {
-            //     console.timeEnd()
-            //     alert('hhhh')
-            //     console.time()
-            //     setTimeout(fn, 3000)
-            // }, 3000)
-        setTimeout(() => {
+            // 确保函数执行都有相同的时间间隔
+            setTimeout(function fn() {
+                console.timeEnd()
+                alert('hhhh')
+                console.time()
+                setTimeout(fn, 3000)
+            }, 3000)
+        setTimeout(() => { 
             console.log(1111);
         }, 0)
         console.log(22222);
