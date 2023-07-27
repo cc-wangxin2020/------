@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Script/jquery-3.7.0.js"></script>
+    <script>
+        $(function(){
+            $('#list1 li:nth-child(1)').click(function(){
+                alert(this)
+            })
+            var $list1 = $('#list1 li:nth-child(1)').clone(true)
+            var $list2 = $('#list2')
+            $('#btn').click(function(){
+                $list2.append($list1)
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <ul id="list1">
+        <li>孙悟空</li>
+        <li>猪八戒</li>
+    </ul>
+    <ul id="list2">
+        <li>唐僧</li>
+        <li>沙和尚</li>
+    </ul>
+</body>
+</html>
