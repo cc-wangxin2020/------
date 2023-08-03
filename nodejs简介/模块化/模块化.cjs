@@ -16,9 +16,11 @@
                 - 直接写核心模块的名字即可
             
 */
-const m1 = require('./m1')
+// const {name, age, gender} = require('./m1.cjs')
+// console.log(name, age, gender);
 // 引入核心模块
 const path = require('path')
-const path = require('node:path')
-console.log(m1);
+// const path = require('node:path')
+// console.log(m1);
 console.log(path);
+console.log(module);

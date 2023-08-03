@@ -13,7 +13,7 @@ async function fn(){
             直到异步代码执行有结果时，才会将结果返回
         await只能用于async声明的异步函数中，或者es模块的顶级作用域中
         await阻塞的只有异步函数内部的代码，不会影响外部代码
-        通过awaitd调用异步代码时，需要通过try-catch来处理异常
+        通过await调用异步代码时，需要通过try-catch来处理异常
     */
     try {
         let res = await sum(1, 2)

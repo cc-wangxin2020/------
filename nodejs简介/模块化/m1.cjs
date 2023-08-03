@@ -21,11 +21,9 @@ const obj = {
 // exports.b = b
 // 对象.属性
 module.exports = {
-    a: 'hh',
-    b: [1,2,3,5],
-    c: ()=>{
-        console.log(111);
-    }
+    name: 'Tom',
+    age: 18,
+    gender: '男'
 }
 console.log(arguments);
 // exports = {
