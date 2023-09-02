@@ -1,5 +1,5 @@
 import {createApp} from 'vue/dist/vue.esm-bundler.js'
-import App from './App'
+import App from './App.vue'
 // 创建根组件
 // const App = {
 //     data(){
