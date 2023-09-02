@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "vite": "^4.4.9"
+  },
+  "name": "helloVue",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "scripts": {
+    "dev":"vite --open",
+    "build":"vite build",
+    "preview":"vite preview"
+  }
+}
