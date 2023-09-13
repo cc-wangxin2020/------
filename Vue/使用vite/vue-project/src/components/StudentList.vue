@@ -1,11 +1,13 @@
 <script setup>
-import {ref} from 'vue'
-const props = defineProps(['students'])
-const emits = defineEmits(['delStu'])
+import {ref, inject} from 'vue'
+// const props = defineProps(['students'])
+// const emits = defineEmits(['delStu'])
+const {students, delStu} = inject('student')
 const deleteHandler = (index) => {
     // console.log(emits);
     if(confirm("确定删除吗？")){
-        emits('delStu', index)
+        // emits('delStu', index)
+        delStu(index)
     }
 }
 </script>
@@ -23,7 +25,7 @@ const deleteHandler = (index) => {
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(stu, index) in props.students">
+            <tr v-for="(stu, index) in students">
                 <td>{{ stu.id }}</td>
                 <td>{{ stu.name }}</td>
                 <td>{{ stu.gender }}</td>
