@@ -1,6 +1,8 @@
 <script setup>
 import { ref, inject } from 'vue';
-import { countStore } from '../store/count';
+// import { countStore } from '../store/count';
+import { useCountStore } from '../store/countStore';
+const counter = useCountStore()
 // const count = ref(0)
 // const fn = () => {
 //     count.value++
@@ -23,5 +25,5 @@ import { countStore } from '../store/count';
 */
 </script>
 <template>
-    <h2>组件A--{{ countStore.count }}--<button @click="countStore.fn">点击</button></h2>
+    <h2>组件A--{{ counter.count }}--<button @click="counter.increment('hhhh')">点击</button></h2>
 </template>
