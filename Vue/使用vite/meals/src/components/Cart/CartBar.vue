@@ -1,17 +1,33 @@
 <script setup>
 import cartbag from '../../assets/bag.png'
+import CartDetails from './CartDetails.vue';
+// import Mask from '../UI/Mask.vue'
+import { useMealStore } from '../../store/meals';
+import { ref } from 'vue';
+import Checkout from '../Checkout/Checkout.vue';
+const meals = useMealStore()
+const showDetails = ref(false)
+const showCheckout = ref(true)
 </script>
 <template>
+    <Checkout :isShow="showCheckout" @close="showCheckout = false"></Checkout>
+    <CartDetails :isShow="showDetails" @hide = "showDetails = false"></CartDetails>
+    <!-- <Mask :is-show="showDetails" @hide = "showDetails = false"></Mask> -->
     <div class="cart-bar">
         <div class="cart-bag">
             <img :src="cartbag" alt="">
-            <span class="total-count">11</span>
+            <span v-show="meals.totalCount > 0" class="total-count">{{ meals.totalCount }}</span>
         </div>
         <div class="total-amount">
-            <!-- <p class="no-goods">未选购商品</p> -->
-            <p class="has-goods">20</p>
+            <p v-show="meals.totalMount <=0" class="no-goods">未选购商品</p>
+            <p 
+            @click="showDetails = true" 
+            v-show="meals.totalMount > 0" 
+            class="has-goods">
+            {{ meals.totalMount }}
+        </p>
         </div>
-        <button class="checkout">去结算</button>
+        <button :class="[meals.totalMount > 0? 'checkout_btn': 'checkout_btn inActive']" @click="showCheckout = true">去结算</button>
     </div>
 </template>
 <style scoped>
@@ -25,6 +41,7 @@ import cartbag from '../../assets/bag.png'
     right: 0;
     margin: 0 auto;
     border-radius: 60rem;
+    z-index: 999;
 }
 .cart-bag{
     position: absolute;
@@ -33,6 +50,10 @@ import cartbag from '../../assets/bag.png'
     bottom: -10rem;
 }
 .total-count{
+    width: 40rem;
+    /* height: 40rem; */
+    text-align: center;
+    /* line-height: 40rem; */
     position: absolute;
     background-color: red;
     border-radius: 50%;
@@ -55,7 +76,7 @@ import cartbag from '../../assets/bag.png'
     content: '￥';
     font-size: 26rem;
 }
-.checkout {
+.checkout_btn {
     position: absolute;
     right: 0;
     top: 0;
@@ -65,5 +86,9 @@ import cartbag from '../../assets/bag.png'
     border: none;
     background-color: rgb(248, 188, 0);
     font-size: 36rem;
+}
+.inActive{
+    background-color: rgb(108,107,107);
+    color: rgb(159,164,159);
 }
 </style>

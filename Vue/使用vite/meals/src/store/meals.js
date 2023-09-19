@@ -58,6 +58,33 @@ export const useMealStore = defineStore('meals', {
     getters:{
         filterMeals: (state) => {
             return state.data.filter(item => item.title.indexOf(state.keyword) != -1)
+        },
+        totalCart: (state) => {
+            return state.data.filter(item => item.count > 0)
+        },
+        totalCount: (state) => {
+            // if(state.totalCart.length <= 0) return 0
+            return state.totalCart.reduce((result, item) => result + item.count, 0)
+        }, 
+        totalMount:(state) =>{
+            return state.totalCart.reduce((result, item) => result + item.count * item.price, 0)
+        }
+    },
+    actions:{
+        addMealToCart(meal){
+            if(isNaN(meal.count)){
+                meal.count = 0
+            }
+            meal.count++
+        },
+        subMealToCart(meal){
+            if(meal.count <= 0 || isNaN(meal.count)){
+                return
+            }
+            meal.count--
+        },
+        clearCart(){
+            this.totalCart.forEach((item) => item.count = 0)
         }
     }
 })

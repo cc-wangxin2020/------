@@ -9,7 +9,7 @@ const meals = useMealStore()
 
 <template>
   <MealsFilter></MealsFilter>
-  <Meals :meals="meals.filterMeals"></Meals>
+  <Meals :desc="true" :meals="meals.filterMeals"></Meals>
   <CartBar></CartBar>
 </template>
 
