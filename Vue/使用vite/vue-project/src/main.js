@@ -9,6 +9,5 @@ import App from './App.vue'
             - 组件实例是一个Proxy对象（代理对象）
 */
 const app = createApp(App)
-
 const vm = app.mount('#app')
 window.vm = vm
