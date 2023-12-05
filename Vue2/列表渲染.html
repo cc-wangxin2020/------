@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item, index) of stu" :key="index">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var obj = {
+            foo:'bar'
+        }
+        // Object.freeze(obj)
+        var app = new Vue({
+            el:'#app',
+            data:{
+                stu:[
+                    'Tom','Jerry','Mark','Eve'
+                ]
+            },
+            methods:{
+                changeShow:function(){
+                    this.isShow = !this.isShow
+                }
+            }
+        })
+    </script>
+</body>
+</html>

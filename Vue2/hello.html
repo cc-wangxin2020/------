@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <div v-bind:title ="title">hhhh</div>
+        <button v-on:click="isshow">点击</button>
+        <div class="box" v-if="seen"></div>
+        <ul>
+            <todo-item 
+            v-for="item in groceryList"
+            v-bind:todo = "item"
+            v-bind:key = "item.id"
+            ></todo-item>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        Vue.component('todo-item', {
+            props:['todo'],
+            template:'<li>{{todo.text}}</li>'
+        })
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:'hello vue',
+                title: new Date().toLocaleString(),
+                seen:true,
+                groceryList:[
+                    {id:0, text:'蔬菜'},
+                    {id:1, text:'奶酪'},
+                    {id:3, text:'冰淇淋'}
+                ]
+            },
+            methods:{
+                isshow: function(){
+                    this.seen = !this.seen
+                }
+            }
+        })
+    </script>
+</body>
+</html>
