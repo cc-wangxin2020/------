@@ -15,3 +15,22 @@
 
 #### node.js和Javascript区别：
 * ECMAScript(node有) 、DOM（node没有）、 BOM（node没有）
+  
+#### xss攻击
+* 用户向系统中输入一些恶意代码
+#### csrf攻击
+* 跨站请求伪造
+
+* 现在大部分浏览器都不会在跨域的情况下自动发送cookie，以避免csrf攻击
+
+* 如何解决？
+  * 使用refer来检查请求的来源
+  * 使用验证码
+  * 尽量使用post请求（结合token）
+  
+* token
+  * 可以在创建表单时随机生成一个令牌，将令牌存储到session中，并通过模板发送给用户，用户提交表单时，必须将token发回，才可以进行后续操作
+  
+* **Babel**：
+
+  Babel用于将你的JavaScript代码转换为向后兼容的版本，以确保它在不同浏览器和环境中能够正常运行
