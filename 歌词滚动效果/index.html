@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            text-align: center;
+            background-color: black;
+        }
+        audio, .container{
+            margin-top: 10px;
+        }
+        audio {
+            width: 500px;
+        }
+        .container {
+            height: 400px;
+            color: #a5a5a5;
+            overflow: hidden scroll;
+        }
+        ul {
+            transform: translateY(-20px);
+            transition: .2s
+        }
+        ul > li{
+            height: 30px;
+            line-height: 30px;
+            transition: .2s;
+        }
+        ul > li.active {
+            color: #ffffff;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <audio src="./assets//music.mp3" controls></audio>
+    <div class="container">
+        <ul>
+        </ul>
+    </div>
+</body>
+<script src="./js/data.js"></script>
+<script src="./js/index.js"></script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media screen and (max-width: 800px) {
+            body {
+                background-color: lightblue;
+            }
+        }
+
+        .container {
+            border: 1px solid red;
+            /* overflow: hidden; */
+        }
+
+        .container::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .box {
+            background-color: #bfa;
+            overflow: hidden;
+        }
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            float: right;
+            background-color: #bfa;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            float: left;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box1">1231435</div>
+        <div class="box2">123254</div>
+    </div>
+</body>
+
+</html>

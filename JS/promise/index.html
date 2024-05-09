@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <p class="label">显示图片的信息</p>
+    </div>
+    <script>
+        function createImg(imgUrl) {
+            return new Promise((resolve, reject) => {
+                const img = document.createElement('img')
+                img.src = imgUrl
+                img.onload = () => {
+                    resolve(img)
+                }
+                img.onerror = (e) => {
+                    reject(e)
+                }
+            })
+        }
+        const url = `https://pic1.zhimg.com/v2-34bda074933a5167d6e2a043b352fbd8_r.jpg?source=1940ef5c`
+
+        // const url = `https://www.bing.com/images/search?view=detailV2&ccid=STZb8m3D&id=3950C0DE62DFB44F093DCD632C4B9BEA9BC6F6BD&thid=OIP.STZb8m3D5cIJlyZeXOWLggHaHa&mediaurl=https%3a%2f%2fpic2.zhimg.com%2fv2-d9a82770243bb1674ea420674850d536_r.jpg%3fsource%3d1940ef5c&exph=960&expw=960&q=%e8%a1%a8%e6%83%85%e5%8c%85&simid=608040664003855095&FORM=IRPRST&ck=3F1C0F105E8910F6D2C14F7502A72FD7&selectedIndex=0&itb=0`
+        createImg(url).then(img => {
+            console.log(img);
+        }, e => {
+            console.log(e);
+        })
+    </script>
+</body>
+
+</html>

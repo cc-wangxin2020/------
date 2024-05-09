@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 100vh;
+            /* grid-auto-rows: 50px; */
+            /* grid-auto-flow: row dense;
+            place-items: start center; */
+            /* justify-content: space-between;
+            align-content: center; */
+            place-items: center center;
+            grid-template-areas: 'a a a'
+                'a a a'
+                'a a a';
+            gap: 10px;
+        }
+
+        .box {
+
+            width: 0;
+            height: 0;
+            border-width: 50px;
+            border-style: solid;
+            border-color: transparent transparent red transparent;
+
+        }
+        .box1::after {
+            content: '';
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="width: 100px;">
+        <div class="box">1</div>
+    </div>
+    <div class="box1">2</div>
+</body>
+
+</html>

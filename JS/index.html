@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        ul.menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            list-style: none;
+            visibility: hidden
+        }
+
+        ul.active {
+            visibility: visible;
+        }
+
+        ul>li {
+            border: 1px solid #ccc;
+            margin-bottom: 2px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        菜单1
+    </div>
+    <ul class="menu">
+        <li>菜单1</li>
+        <li>菜单1</li>
+        <li>菜单1</li>
+    </ul>
+    <!-- <p class="content">这是一段<strong>测试</strong>文本</p>
+    <script src="./webAPI/计时器.js"></script> -->
+    <script>
+        let ele = document.querySelector('.container')
+        let menu = document.querySelector('.menu')
+        window.addEventListener('contextmenu', (e) => {
+            e.preventDefault()
+        })
+        window.addEventListener('click', function () {
+            menu.classList.remove('active');
+        })
+        ele.addEventListener('contextmenu', (e) => {
+            menu.classList.add('active')
+            menu.style.top = e.clientY + 'px'
+            menu.style.left = e.clientX + 'px'
+            console.log(e);
+        })
+    </script>
+</body>
+
+</html>

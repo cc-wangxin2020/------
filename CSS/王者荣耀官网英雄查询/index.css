@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e2e2e2;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 1000px;
+    margin: 30px auto;
+    /* background: #fff; */
+}
+
+.search {
+    display: flex;
+    height: 100px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    line-height: 50px;
+}
+
+/* .search>* {
+    outline: 1px dashed;
+} */
+
+.title {
+    width: 80px;
+    text-align: center;
+    background: lightblue;
+    border-radius: 10px 0 0 10px;
+}
+
+.select {
+    flex: 1 0 auto;
+    background-color: #fff;
+}
+
+.type_list {
+    display: flex;
+    padding-left: 20px;
+}
+
+.radio {
+    position: relative;
+    margin-right: 20px;
+    padding-left: 30px;
+}
+
+.radio::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.radio::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%) scale(0);
+    background: lightblue;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.radio.checked::after{
+    transform: translateY(-50%) scale(1);
+}
+
+.keyword {
+    background: #fff;
+}
+.input {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    margin-top: 55px;
+    line-height: 40px;
+    margin-right: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+.input input{
+    background:none;  
+	outline:none;  
+	border:0px;
+    padding-left: 20px;
+}
+
+.input::after{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 80%;
+    top: 50%;
+    right: 0;
+    border-left: 1px solid #ccc;
+    transform: translateY(-50%);
+    /* background: #bfa; */
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    row-gap: 20px;
+    justify-items: center;
+    text-align: center;
+}
+
+.list li img {
+    width: 80px;
+    height: 80px;
+    display: block;
+    border: 1px solid lightblue;
+    border-radius: 10px 0 10px 0;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <form>
+        <h3>用户注册</h3>
+        <div class="form-item">
+            <input class="txt phone" type="text" placeholder="请输入11位手机号">
+        </div>
+        <div class="form-item clearfix">
+            <input class="txt left captcha" type="text" placeholder="请填写验证码">
+            <button class="right" disabled>发送验证码</button>
+        </div>
+        <div class="form-item">
+            <input class="txt password" type="password" placeholder="请填写密码">
+        </div>
+        <div class="form-item">
+            <input class="txt" type="password" placeholder="请再次确认密码">
+        </div>
+        <div class="form-item">
+            <select class="txt hobby" name="" id="" multiple>
+                <option value="">爱好1</option>
+                <option value="">爱好2</option>
+                <option value="">爱好3</option>
+                <option value="">爱好4</option>
+                <option value="">爱好1</option>
+                <option value="">爱好2</option>
+                <option value="">爱好3</option>
+                <option value="">爱好4</option>
+            </select>
+        </div>
+        <div class="form-item clearfix">
+
+            <div class="sex left">
+                性别:
+            </div>
+            <div class="left">
+                <label class="radio male">
+                    <input type="radio" name="sex" value="男" checked>
+                    <span>男</span>
+                </label>
+                <label class="radio female">
+                    <input type="radio" name="sex" value="女">
+                    <span>女</span>
+                </label>
+            </div>
+
+        </div>
+        <div class="form-item">
+            <textarea class="txt" name="" id="" placeholder="请输入内容"></textarea>
+        </div>
+        <div class="form-item">
+            <label class="policy">
+                <input class="" type="checkbox" name="" id="">
+                <span>同意隐私协议</span>
+            </label>
+        </div>
+        <div class="form-item clearfix">
+            <button type="submit" class="submit left">立即注册</button>
+            <button type="reset" class="reset right">重置表单</button>
+        </div>
+    </form>
+    <script src="./index.js"></script>
+</body>
+
+</html>
