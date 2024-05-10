@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            /* background: #bfa;  */
+            font-size: 3rem;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container div {
+            width: 50px; 
+        }
+        .container div span {
+            display: block;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div><span class="animate__animated animate__rotateIn A">A</span></div>
+        <div><span class="animate__animated animate__zoomIn">N</span></div>
+        <div><span class="animate__animated animate__slideInDown">I</span></div>
+        <div><span class="animate__animated animate__flipInY">M</span></div>
+        <div><span class="animate__animated animate__bounceIn">A</span></div>
+        <div><span class="animate__animated animate__bounceIn">T</span></div>
+        <div><span class="E animate__animated animate__lightSpeedInRight animate__delay-0.5s">E</span></div>
+    </div>
+    <script>
+        const container = document.querySelector('.container')
+        const A = document.querySelector('.container .A')
+        const E = document.querySelector('.container .E')
+        console.log(E);
+        E.addEventListener('animationend', function () {
+            A.classList.remove('animate__rotateIn')
+            A.classList.add('animate__hinge')
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const xhr = new XMLHttpRequest()
+        xhr.onloadstart = function () {
+            // send()方法被调用之前触发
+            console.log(xhr);
+        }
+        xhr.onload = function () {
+            // 加载完所有内容之后被调用
+            console.log(xhr);
+        }
+        xhr.onprogress = function () {
+            // 接收服务器响应消息体之间每隔50ms触发一次
+            console.log(xhr);
+        }
+        // xhr.onreadystatechange = function () {
+        //     // 当请求状态发生改变时运行函数
+        //     // xhr.readyState 一个数字，用于判断请求到了那个阶段
+        //     // 1：open方法已被调用
+        //     // 2：send方法已被调用
+        //     // 3：正在接收服务器的响应消息体
+        //     // 4：服务器响应的所有内容均已被接收完毕
+        //     console.log(xhr.readyState);
+        //     console.log(xhr.responseURL);
+        //     console.log(xhr);
+        // }
+        xhr.open('get', 'https://study.duyiedu.com/api/herolist')
+        xhr.send(null)
+    </script>
+</body>
+
+</html>

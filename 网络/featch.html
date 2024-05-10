@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // fetch 返回的是一个promise，当收到服务器的响应头之后，Promise完成
+        // 完成之后会给予以恶搞响应对象
+        fetch('https://study.duyiedu.com/api/herolist')
+            .then((resp) => {
+                return resp.json()
+            }).then(resp => {
+                console.log(resp);
+            })
+    </script>
+</body>
+
+</html>
