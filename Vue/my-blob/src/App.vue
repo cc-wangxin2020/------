@@ -1,29 +1,37 @@
 <template>
   <div id="app">
-    <h1>Vue</h1>
-    <Pager :current="pageOptions.current" :size="pageOptions.size" :total="pageOptions.total"
-      @pageChange="handlePageChange"></Pager>
-
-    
-      <div class="container">
-        <Empty></Empty>
-      </div>
+    <Layout>
+      <template v-slot:left>
+        <div class="left">
+          <SiteAside></SiteAside>
+        </div>
+      </template>
+      <template v-slot:main>
+        <router-view></router-view>
+      </template>
+    </Layout>
 
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-// import Icon from '@/components/Icon.vue'
-// import MyImg from '@/components/MyImg.vue'
+import Avatar from '@/components/Avatar'
 // import url from '@/assets/OIP-C.jpg'
 import Pager from '@/components/Pager'
 import Empty from '@/components/Empty'
+import ImageLoader from '@/components/ImageLoader'
+import SiteAside from '@/components/SiteAside'
+import Layout from '@/components/Layout'
 
 export default {
   components: {
+    Avatar,
     Pager,
-    Empty
+    Empty,
+    ImageLoader,
+    SiteAside,
+    Layout
   },
   data() {
     return {
@@ -49,10 +57,16 @@ export default {
   }
 }
 </script>
-<style scoped>
-.container {
-  width: 500px;
-  height: 400px;
-  background: #fac;
+<style lang="less" scoped>
+@import '~@/style/mixin.less';
+
+#app {
+  .self-fill(fixed);
+
+  // background: #000;
+  .left {
+    width: 300px;
+    height: 100%;
+  }
 }
 </style>

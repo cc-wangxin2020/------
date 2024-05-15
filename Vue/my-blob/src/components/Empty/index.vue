@@ -1,12 +1,11 @@
 <template>
     <div class="empty_container">
-        <img src="" alt="">
+        <i class="iconfont icon-empty"></i>
         <p>{{ text }}</p>
     </div>
 </template>
 
 <script>
-import url from '@/assets/OIP-C.jpg'
 export default {
     props: {
         text: {
@@ -18,21 +17,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
+@import '//at.alicdn.com/t/c/font_4542555_0kkdivsg9i4.css';
+@import '~@/style/mixin.less';
 .empty_container {
-    display: flex;
-    width: inherit;
-    height: inherit;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    img {
-        width: 100px;
-        height: 100px;
-        background: #bfa;
-        border-radius: 50%;
-        border: none;
-        margin-bottom: 10px;
+    .pos-center();
+    text-align: center;
+    .iconfont {
+        font-size: 5rem;
     }
+    
 }
 </style>
