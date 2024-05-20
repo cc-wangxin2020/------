@@ -1,11 +1,11 @@
 <template>
     <div class="page-container">
-        <a :class="{ disabled: current === 1 }" @click="handleClick(current - 1)">|&lt;&lt;</a>
+        <a :class="{ 'disabled': current === 1 }" @click="handleClick(current - 1)">|&lt;&lt;</a>
         <a @click="handleClick(1)">first</a>
-        <a v-for="(n, i) in numbers" :key="i" :class="{ active: current === n }" @click="handleClick(n)">{{ n
+        <a v-for="(n, i) in numbers" :key="i" :class="{ 'active': current === n }" @click="handleClick(n)">{{ n
             }}</a>
         <a @click="handleClick(pageNum)">last</a>
-        <a :class="{ disabled: current === pageNum }" @click="handleClick(current + 1)">&gt;&gt;|</a>
+        <a :class="{ 'disabled': current === pageNum }" @click="handleClick(current + 1)">&gt;&gt;|</a>
         <p>总共 {{ pageNum }} 页</p>
     </div>
 </template>
@@ -55,6 +55,9 @@ export default {
     },
     methods: {
         handleClick(currentNum) {
+            if(currentNum > this.pageNum || currentNum < 1 || currentNum === this.current){
+                return;
+            }
             this.$emit('pageChange', currentNum)
         }
     }

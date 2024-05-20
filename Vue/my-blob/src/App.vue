@@ -68,5 +68,15 @@ export default {
     width: 300px;
     height: 100%;
   }
+
+  // .fade-enter-active,
+  // .fade-leave-active {
+  //   transition: opacity .5s;
+  // }
+
+  // .fade-enter,
+  // .fade-leave-to {
+  //   opacity: 0;
+  // }
 }
 </style>

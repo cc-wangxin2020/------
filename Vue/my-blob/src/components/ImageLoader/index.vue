@@ -40,6 +40,7 @@ export default {
             this.isLoaded = true
             setTimeout(() => {
                 this.isDone = true
+                this.$emit('load')
             }, this.duration);
         }
     }
@@ -50,15 +51,17 @@ export default {
 @import '~@/style/mixin.less';
 
 .image-loader-container {
+    width: 100%;
+    height: 100%;
+
     img {
-        .self-fill();
         width: 100%;
         height: 100%;
         object-fit: cover;
 
         &.origin {
             opacity: 0;
-            transition: ;
+            transition: 0.3s;
         }
     }
 }

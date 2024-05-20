@@ -1,18 +1,18 @@
 <template>
-    <div class="home-container" ref="homeContainer">
-        <ul class="carousel-container" :style="{ 'margin-top': marginTop }">
-            <li v-for="item in banners" :key="item.id">
-                <Carouselitem></Carouselitem>
+    <div v-loading="loading" class="home-container" ref="homeContainer" @wheel="handleWheel">
+        <ul class="carousel-container" :style="{ 'margin-top': marginTop }" @transitionend="handleTransitionend">
+            <li v-for="item in data" :key="item.id">
+                <Carouselitem :data="item"></Carouselitem>
             </li>
         </ul>
         <div v-show="index > 0" @click="handleChangePage(index - 1)" class="icon arrow-up">
             <Icon type="up"></Icon>
         </div>
-        <div v-show="index < banners.length - 1" @click="handleChangePage(index + 1)" class="icon arrow-down">
+        <div v-show="index < data.length - 1" @click="handleChangePage(index + 1)" class="icon arrow-down">
             <Icon type="down"></Icon>
         </div>
         <ul class="indicator">
-            <li :class="{ 'active': index === i }" v-for="(item, i) in banners" :key="item.id"
+            <li :class="{ 'active': index === i }" v-for="(item, i) in data" :key="item.id"
                 @click="handleChangePage(i)"></li>
         </ul>
     </div>
@@ -21,15 +21,18 @@
 <script>
 import Carouselitem from './Carouselitem'
 import { getBanners } from '@/api/banner'
+import fetchData from '@/mixin/fetchData.js'
+
 export default {
+    mixins: [fetchData([])],
     components: {
         Carouselitem
     },
     data() {
         return {
-            banners: [],
-            index: 1, // 记录页数
-            clientHeight: 0
+            index: 0, // 记录页数
+            clientHeight: 0,
+            wheeling: false // 是否正在滚动
         }
     },
     computed: {
@@ -37,16 +40,41 @@ export default {
             return -this.clientHeight * this.index + 'px';
         }
     },
-    async created() {
-        this.banners = await getBanners()
-    },
     mounted() {
         this.clientHeight = this.$refs.homeContainer.clientHeight
+        // 监听浏览器高度变化
+        window.addEventListener('resize', this.handleResize)
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.handleResize)
     },
     methods: {
+        async getData() {
+            return await getBanners()
+        },
+
         handleChangePage(i) {
             this.index = i
-            console.log(this.index);
+            // console.log(this.index);
+        },
+        handleWheel(e) {
+            if (this.wheeling) {
+                return
+            }
+            if (e.deltaY < 0 && this.index > 0) {
+                this.index--;
+                this.wheeling = true
+            }
+            if (e.deltaY > 0 && this.index < this.data.length - 1) {
+                this.index++;
+                this.wheeling = true
+            }
+        },
+        handleTransitionend() {
+            this.wheeling = false
+        },
+        handleResize() {
+            this.clientHeight = this.$refs.homeContainer.clientHeight
         }
     }
 }
@@ -66,6 +94,7 @@ export default {
         color: @icon-color;
         width: 100%;
         height: 100%;
+        transition: 0.3s;
 
         li {
             width: 100%;

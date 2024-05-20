@@ -2,7 +2,7 @@
 
     <nav class="menu_container">
 
-        <router-link :exact="item.exact" v-for="item in items" :key="item.link" :to="{ name: item.name }"
+        <router-link :exact="item.exact" v-for="item in items" :key="item.link" :to="{ 'name': item.name }"
             active-class="selected">
             <Icon class="icon" :type="item.icon"></Icon>
             <span>{{ item.title }}</span>
@@ -28,7 +28,7 @@ export default {
                     name: 'Blog',
                     title: '文章',
                     icon: 'blog',
-                    exact: true
+                    exact: false
                 },
                 {
                     name: 'About',

@@ -29,7 +29,9 @@ export default {
     }
     .main {
         flex: 1 1 auto;
-        background-color: @theme;
+        height: 100vh;
+        // background-color: @theme;
+        // color: #fff;
     }
     .right {
         flex: 0 0 auto;
