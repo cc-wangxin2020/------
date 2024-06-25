@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Script/jquery-3.7.0.min.js"></script>
+    <script>
+        /* 
+                            empty()：删除所有的子元素
+                            remove()：移除元素（移出事件）
+                            detach()：移出元素
+                        */
+        var $li = $("li:nth-child(1)")
+        console.log($li);
+        $li.click(function() {
+            alert('hhh')
+        })
+        $('#btn').click(function() {
+            $('li:nth-child(1)').detach()
+        })
+        $('#btn2').click(function() {
+            $('ul').append($li)
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我</button>
+    <button id="btn2">点我2</button>
+    <ul>
+        <li>猪八戒</li>
+        <li>沙和尚</li>
+        <li>唐僧</li>
+        <li>孙悟空</li>
+    </ul>
+</body>
+
+</html>

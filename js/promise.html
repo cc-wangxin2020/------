@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="promise.js"></script>
+</head>
+
+<body>
+  <script>
+    const p1 = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject('p1')
+      }, 1000)
+    })
+    const p2 = new Promise((resolve, reject) => {
+      reject('p2')
+    })
+    const p3 = new Promise((resolve, reject) => {
+      reject('p3')
+    })
+    const all = promiseAll([p1, p2, p3])
+    console.log(all);
+    let thenable = {
+      then: function (resolve, reject) {
+        resolve(42);
+      }
+    };
+    const p4 = promiseResolve(thenable)
+    console.log(p4);
+
+    const p5 = promiseReject(123)
+    console.log(p5);
+
+    const p6 = promiseRace([p1, p2, p3])
+    console.log(p6);
+
+    const p7 = promiseAllSettled([p1, p2, p3])
+    console.log(p7);
+
+    const p8 = promiseAny([p1, p2, p3])
+    console.log(p8);
+  </script>
+</body>
+
+</html>

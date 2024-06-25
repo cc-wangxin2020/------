@@ -657,5 +657,3 @@ null == undefined             // true
 
   `reduce()` 方法不会减少原始数组。
 
-* 
-
