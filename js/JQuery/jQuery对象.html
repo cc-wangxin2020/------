@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Script/jquery-3.7.0.js"></script>
+</head>
+<body>
+    <ul>
+        <li id="1">1</li>
+        <li id="2">2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <script>
+        /* 
+            jQuery对象：
+                - 通过jQuery核心函数获取到的对象就是jQuery对象
+                - jQuery对象是jQuery中定义的对象
+                    在jQuery对象中提供了很多方法来简化DOM操作
+                - 当修改jQuery对象时，会自动修改jQuery中的所有元素
+                    这一特点被称为jQuery的隐式迭代
+                - 通常情况下，jQuery对象的返回值依然是jQuery对象
+                    所以可以在调用一个方法后继续调用其他的jQuery对象的方法
+                    这一特性，称为jQuery对象的链式调用 
+        */
+       var $li = $('li')
+       $li.text('hhhhh').css('color', 'red')
+       $li.attr('id')
+       console.log($li.attr('id'));
+    </script>
+</body>
+</html>

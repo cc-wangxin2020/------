@@ -6,6 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfc;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: #bcf;
+        }
+        #box3{
+            width: 50px;
+            height: 50px;
+            background-color: #fbc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <div id="box2">
+            <div id="box3"></div>
+        </div>
+    </div>
     <script>
         /**
          * 事件的传播机制：
@@ -18,11 +43,19 @@
          *      - 如果希望在捕获阶段触发事件，可以将addEventListener的第三个参数设置为true
          *          一般情况下不希望事件在捕获阶段触发，通常不需要设置第三个参数
          */
+        const box1 = document.getElementById('box1')
+        const box2 = document.getElementById('box2')
+        const box3 = document.getElementById('box3')
+        box1.addEventListener("click", event => {
+            alert("1" + event.eventPhase)  // eventPlase表示事件触发的阶段
+        }, true)
+        box2.addEventListener("click", event => {
+            alert("2" + event.eventPhase)
+        }, true)
+        box3.addEventListener('click', event => {
+            alert("3" + event.eventPhase)
+        }, true)
     </script>
-</head>
-
-<body>
-
 </body>
 
 </html>

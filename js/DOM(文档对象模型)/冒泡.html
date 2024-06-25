@@ -30,10 +30,12 @@
 <body>
     <div id="box1"></div>
     <div id="box2"></div>
+    <!-- 事件的冒泡与元素的样式无关，只与元素的结构有关 -->
     <script>
         const box1 = document.querySelector('#box1')
         const box2 = document.querySelector('#box2')
         document.addEventListener('mousemove', event => {
+            
             box1.style.left = (event.x - 50) + 'px'
             box1.style.top = (event.y - 50) + 'px'
                 // console.log(111, event.x, event.y);

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <div id="root"></div>
+    <script>
+        const btn = document.getElementById('btn')
+        btn.onclick = ()=>{
+            // 向服务器发送请求
+            /* 
+                在JS中向服务器发送请求加载数据的技术叫AJAX
+                AJAX
+                    - A 异步 J JavaScript A 和 X xml
+                    - 作用：通过js向服务器发送请求来加载数据
+                    - 目前的数据格式为json
+                    - 目前可选的方案
+                        1. XMLHTTPRequest(xhr)
+                        2. Fetch
+                        3. Axios
+                - CORS（跨域资源共享）
+                    - 跨域请求 
+                        - 跨域需要检查三个东西：
+                            协议 域名 端口号
+                            - 三个只要有一个不同就算跨域
+                        - 当通过AJAX去发送跨域请求时，
+                            浏览器为了服务器的安全，会阻止JS读取到服务器的数据
+            */
+            //    xhr
+            // 创建一个新的xhr对象，xhr表示请求信息
+            const xhr = new XMLHttpRequest()
+            const root = document.getElementById('root')
+            // 设置请求信息
+            xhr.open('GET', "http://localhost:3000/students")
+            xhr.send()
+            // 读取响应信息, 为xhr对象绑定一个load事件，等待xhr对象加载完毕后输出响应
+            xhr.onload = function(){
+                if(xhr.status === 200){
+                    const result = JSON.parse(xhr.response)
+                    if (result.status === 'ok'){
+                        const ul = document.createElement('ul')
+                        root.appendChild(ul)
+                        for(let stu of result.data){
+                            ul.insertAdjacentHTML(
+                                "beforeend",
+                                `<li>${stu.id}- ${stu.name} -${stu.age} -${stu.gender} - ${stu.address}</li>`
+                            )
+                        }
+                    }
+                    console.log(result.status, result.data);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // 手动实现promise.all方法
 function promiseAll(promises) {
   return new Promise((resolve, reject) => {
@@ -105,3 +106,14 @@ function promiseAny(promises) {
     }
   })
 }
+=======
+let promise = new Promise(resolve => {
+  console.log('1')
+  resolve()
+  console.log('2')
+})
+promise.then(resolved => {
+  console.log('3')
+})
+console.log('3')
+>>>>>>> b29612b6032c2da069818752466fcef626b913e4

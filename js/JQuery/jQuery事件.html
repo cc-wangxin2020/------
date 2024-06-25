@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Script//jquery-3.7.0.js"></script>
+    <style>
+        .box1{
+            float: left;
+            width: 100px;
+            height: 100px;
+            border: 2px red solid;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        $(function(){
+            // 可以通过指定方法来为jQuery对象绑定事件
+            $('a').click(function(event){
+                // 在jQuery的事件响应函数中，同样有事件对象，但是这个对象是经过jQuery包装过的新的对象
+                // 包装该对象主要是为了解决兼容性的问题
+                event.stopPropagation()
+                event.preventDefault()
+
+                alert(event)
+                // 在jQuery的事件回调函数中，可以通过return false来取消默认行为和冒泡
+                // return false
+            })
+            // $(document.body).click(function(){
+            //     alert('body')
+            // })
+            // on() 绑定事件相当于addEventListener()
+            // off() 用于取消事件的绑定
+            // one() 绑定一个一次性的事件
+            $('#btn').on('click', function(){
+                $(document.body).append('<div class="box1"/>')
+            })
+            // 事件的委托
+            $('.box1').one('click', function(){
+                alert('hhhh')
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <hr>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <div class="box1"></div>
+    <!-- <a href="javascript:;">链接</a> -->
+</body>
+</html>

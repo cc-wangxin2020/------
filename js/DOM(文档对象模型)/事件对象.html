@@ -18,6 +18,7 @@
 <body>
     <div id="box1">
     </div>
+    <a href="https://www.baidu.com">点击</a>
     <script>
         /**
          * event 事件：
@@ -43,6 +44,7 @@
          *          - 可以通过事件对象来取消冒泡
          */
         const box1 = document.getElementById('box1')
+        const h = document.querySelector("a")
             // box1.addEventListener('mousemove', event => {
             //     console.log(event.clientX + ' ' + event.clientY);
             // })
@@ -50,8 +52,12 @@
             // 触发事件的对象
             // this事件的直接调用对象
             console.log(event.target);
+            console.log(event);
             console.log(this);
         }
+        h.addEventListener("click", (event) => {
+            event.preventDefault()
+        })
     </script>
 </body>
 

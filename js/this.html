@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sum() {
+            console.log(this);
+            function fn2() {
+                console.log(this);
+                const fn3 = () => {
+                    console.log(this);
+                }
+                fn3()
+            }
+            fn2()
+        }
+        const fn2 = () => {
+            console.log(this);
+        }
+        fn2()
+        sum()
+
+        const obj = {
+            name: '12', test:function (){
+                console.log(this);
+                const t = () => {
+                    console.log(this);
+                }
+                t()
+            }
+        }
+        obj.test()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

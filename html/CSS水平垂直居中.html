@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+    }
+
+    .content {
+      width: 200px;
+      height: 100px;
+      white-space: nowrap;
+      background-color: #bfa;
+      /* margin: auto; */
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .multi {
+      width: 200px;
+      height: 100px;
+      /* white-space: nowrap; */
+      background-color: #baf;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content">
+      html5 提供的一种浏览器本地存储的方法，它借鉴了服务器端 session 的概念，代表的是一次会话中所保存的数据。它一般能够存储 5M 或者更大的数据，它在当前窗口关闭后就失效了，并且 sessionStorage
+      只能被同一个窗口的同源页面所访问共享
+    </div>
+    <div class="multi">
+      html5 提供的一种浏览器本地存储的方法，它借鉴了服务器端 session 的概念，代表的是一次会话中所保存的数据。它一般能够存储 5M 或者更大的数据，它在当前窗口关闭后就失效了，并且 sessionStorage
+      只能被同一个窗口的同源页面所访问共享
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>{{message}}</p>
+        <p>{{reversedMessage}}</p>
+        <p>{{now}}</p>
+    </div>
+    <script type="text/javascript">
+        var obj = {
+            foo:'bar'
+        }
+        // Object.freeze(obj)
+        var app = new Vue({
+            el:'#app',
+            data:{
+                message:'Hello'
+            },
+            computed:{
+                reversedMessage: function(){
+                    return this.message.split('').reverse().join('')
+                },
+                now:function(){
+                    return Date.now()
+                }
+            },
+            methods:{
+                isshow: function(){
+                    console.log(this);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

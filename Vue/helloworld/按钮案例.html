@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        // 组件：用来创建组件实例（用来复用）
+        const Root = {
+            data(){
+                return {
+                    count: 0
+                    // data中的数据会自动和使用它的视图绑定，数据发生变化视图会自动刷新
+                }
+            },
+            template:"<button @click='count++'>点击</button> - 点了{{count}}次"  // 希望组件在页面中共呈现的样子
+        }
+        Vue.createApp(Root).mount('#root')
+    </script>
+</body>
+</html>
