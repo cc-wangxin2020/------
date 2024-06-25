@@ -3,8 +3,10 @@ import VueRouter from 'vue-router'
 import { routes } from './routes.js'
 
 Vue.use(VueRouter)
-
-export const router = new VueRouter({
+const router = new VueRouter({
     routes,
-    mode: 'hash'
+    mode: 'history'
 })
+
+window.router = router
+export { router }

@@ -3,9 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     background-color: #222222;
 }
+
 form {
     width: 400px;
     background-color: #fff;
@@ -18,9 +20,27 @@ form h3 {
     text-align: center;
     margin-bottom: 30px;
 }
+
 .form-item {
     margin-bottom: 10px;
 }
+
+input:invalid {
+    outline: 1px solid red;
+}
+
+input:invalid ~ .error {
+    display: block;
+}
+
+.error {
+    display: none;
+    /* display: block; */
+    height: 10px;
+    font-size: 0.8rem;
+    color: red
+}
+
 .txt {
     outline: none;
     border: 1px solid #ccc;
@@ -30,12 +50,15 @@ form h3 {
     padding: 0 10px;
     font-size: 14px;
 }
+
 .txt::placeholder {
     color: #ccc;
 }
+
 .txt:focus {
     outline: 1px solid #577FE4;
 }
+
 button {
     outline: none;
     height: 40px;
@@ -45,14 +68,17 @@ button {
     color: #fff;
     border-radius: 5px;
 }
+
 button:hover {
     background-color: #6f91e7;
     cursor: pointer;
 }
+
 button:disabled {
     background-color: #6f91e7;
     cursor: not-allowed;
 }
+
 select.txt {
     height: 100px;
 }
@@ -62,37 +88,49 @@ textarea.txt {
     resize: none;
     padding: 10px;
 }
+
 .policy {
     color: #ccc;
 }
+
 .policy input:checked~span {
     color: #000;
 }
+
 .policy input {
     vertical-align: middle;
 }
-.submit, .reset {
+
+.submit,
+.reset {
     width: 45%;
 }
+
 .captcha.txt {
     width: 60%;
 }
+
 .sex {
     margin-right: 10px;
 }
+
 .radio {
     color: #ccc;
     cursor: pointer;
 }
+
 .radio input:checked~span {
-    color:#000
+    color: #000
 }
+
 .left {
     float: left;
 }
+
 .right {
     float: right;
 }
+
 .clearfix::after {
     content: '';
     display: block;

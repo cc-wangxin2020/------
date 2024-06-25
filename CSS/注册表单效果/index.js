@@ -10,7 +10,15 @@ const obj = {
 }
 
 for (let i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener('input', debounce(save, 1000))
+    inputs[i].addEventListener('blur', function (e){
+        this.setCustomValidity('')
+        this.checkValidity()
+    })
+    inputs[i].addEventListener('invalid', function (e){
+        console.log('验证');
+        console.log(this.validationMessage);
+        this.setCustomValidity('验证未通过！')
+    })
 }
 
 const phone = document.querySelector('.phone')
@@ -46,3 +54,4 @@ function save() {
     const str = JSON.stringify(obj)
     localStorage.setItem('user1', str)
 }
+

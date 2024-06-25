@@ -12,19 +12,19 @@
     <script>
         let inp = document.querySelector('input')
         // 非立即执行
-        // function debounce(fn, duration) {
-        //     let timerId;
-        //     return function () {
-        //         if (timerId) {
-        //             clearTimeout(timerId)
-        //         }
-        //         let that = this
-        //         let args = Array.prototype.slice.call(arguments)
-        //         timerId = setTimeout(function () {
-        //             fn.apply(that, args)
-        //         }, duration)
-        //     }
-        // }
+        function debounce(fn, duration) {
+            let timerId;
+            return function () {
+                if (timerId) {
+                    clearTimeout(timerId)
+                }
+                let that = this
+                let args = Array.prototype.slice.call(arguments)
+                timerId = setTimeout(function () {
+                    fn.apply(that, args)
+                }, duration)
+            }
+        }
         // 立即执行
         // function debounce(fn, duration) {
         //     let timerId;
@@ -42,25 +42,25 @@
         /**
          * 执行函数、防抖时间、执行函数是否立即执行
         */
-        function debounce(fn, duration, immadiate) {
-            let timerId;
-            return function () {
-                let that = this
-                let args = [...arguments]
-                if (timerId) clearTimeout(timerId)
-                if (immadiate) {
-                    let flag = !timerId
-                    timerId = setTimeout(function () {
-                        timerId = null
-                    }, duration)
-                    if (flag) fn.call(that, args)
-                } else {
-                    timerId = setTimeout(function () {
-                        fn.call(that, args)
-                    })
-                }
-            }
-        }
+        // function debounce(fn, duration, immadiate) {
+        //     let timerId;
+        //     return function () {
+        //         let that = this
+        //         let args = [...arguments]
+        //         if (timerId) clearTimeout(timerId)
+        //         if (immadiate) {
+        //             let flag = !timerId
+        //             timerId = setTimeout(function () {
+        //                 timerId = null
+        //             }, duration)
+        //             if (flag) fn.call(that, args)
+        //         } else {
+        //             timerId = setTimeout(function () {
+        //                 fn.call(that, args)
+        //             })
+        //         }
+        //     }
+        // }
         // 节流
         function throttle(fn, duration) {
             let timerId;
@@ -77,9 +77,9 @@
         }
         let fn = debounce(function (e) {
             console.log('触发事件', e, this);
-        }, 1000, true)
+        }, 1000)
         inp.addEventListener('input', fn)
-        window.addEventListener('mousemove', fn)
+        // window.addEventListener('mousemove', fn)
     </script>
 </body>
 

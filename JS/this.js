@@ -44,9 +44,10 @@ let obj2 = {
 
 Object.prototype.print = function () {
     for (let i in this) {
-        if(Object.hasOwn(this, i))
-        console.log(i + ':' + this[i]);
+        if (Object.hasOwn(this, i))
+            console.log(i + ':' + this[i]);
     }
 }
 
 obj1.print()
+console.log(process);

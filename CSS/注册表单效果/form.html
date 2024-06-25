@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <label for="name">输入用户名（允许使用大小写字母）：</label>
+    <input type="text" name="name" id="name" required pattern="[A-Za-z]+" />
+    <button>提交</button>
+  </form>
+
+  <!-- page.html?fruit=cherry&fruit.dir=ltr -->
+
+  <script>
+    const nameInput = document.querySelector("input");
+    nameInput.addEventListener("input", () => {
+      nameInput.setCustomValidity("");
+      nameInput.checkValidity();
+    });
+    nameInput.addEventListener("invalid", () => {
+      if (nameInput.value === "") {
+        nameInput.setCustomValidity("输入一个用户名！");
+      } else {
+        nameInput.setCustomValidity("用户名只能包含大写或小写字母，请再试一遍。");
+      }
+    });
+
+  </script>
+</body>
+
+</html>

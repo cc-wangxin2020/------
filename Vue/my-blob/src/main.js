@@ -5,17 +5,21 @@ import { router } from '@/router/index.js'
 import Icon from '@/components/Icon'
 import '@/mock'
 import '@/api/banner.js'
+import qrcode from 'qrcode'
 
 Vue.component('Icon', Icon)
 
 import { showMessage } from '@/utils'
 Vue.prototype.$showMessage = showMessage
 
+Vue.prototype.$EventBus = new Vue({})
+
 import Loading from '@/directives/Loading'
 Vue.directive('loading', Loading)
 
 const vm = new Vue({
   router,
+  qrcode,
   render: h => h(App),
 }).$mount('#app')
 console.log(vm);

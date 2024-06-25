@@ -9,20 +9,26 @@
 </head>
 
 <body>
-    <form>
+    <form novalidate>
         <h3>用户注册</h3>
         <div class="form-item">
-            <input class="txt phone" type="text" placeholder="请输入11位手机号">
-        </div>
-        <div class="form-item clearfix">
-            <input class="txt left captcha" type="text" placeholder="请填写验证码">
-            <button class="right" disabled>发送验证码</button>
+            <input class="txt phone" type="text" placeholder="请输入11位手机号" required minlength="11" maxlength="11">
+            <span class="error">验证未通过!</span>
         </div>
         <div class="form-item">
-            <input class="txt password" type="password" placeholder="请填写密码">
+            <div class="clearfix">
+                <input class="txt left captcha" type="text" placeholder="请填写验证码" required>
+                <button class="right" disabled>发送验证码</button>
+            </div>
+            <span class="error">验证未通过</span>
         </div>
         <div class="form-item">
-            <input class="txt" type="password" placeholder="请再次确认密码">
+            <input class="txt password" type="password" placeholder="请填写密码" required>
+            <span class="error">验证未通过</span>
+        </div>
+        <div class="form-item">
+            <input class="txt" type="password" placeholder="请再次确认密码" required>
+            <span class="error">验证未通过</span>
         </div>
         <div class="form-item">
             <select class="txt hobby" name="" id="" multiple>
@@ -37,7 +43,6 @@
             </select>
         </div>
         <div class="form-item clearfix">
-
             <div class="sex left">
                 性别:
             </div>
