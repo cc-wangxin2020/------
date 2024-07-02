@@ -6,6 +6,7 @@ const proto = {
 const person = Object.create(proto);
 person.name = "实例";
 person.arr.push(3);
+proto.arr.push(5)
 
 console.log(person.name);
 console.log(proto.name);

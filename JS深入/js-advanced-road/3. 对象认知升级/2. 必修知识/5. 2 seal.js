@@ -14,3 +14,4 @@ console.log(object1.property2);
 delete object1.property1;
 console.log(object1.property1);
 
+console.log(Object.getOwnPropertyDescriptor(object1, 'property1'));

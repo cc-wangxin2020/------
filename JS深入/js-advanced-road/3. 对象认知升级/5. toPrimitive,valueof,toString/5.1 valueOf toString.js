@@ -3,10 +3,10 @@ const user = {
     age: 10,
     toString() {
         return this.name;
-    },
-    valueOf() {
-        return this.age;
     }
+    // valueOf() {
+    //     return this.age;
+    // }
 };
 
 console.log("user:",  + user);

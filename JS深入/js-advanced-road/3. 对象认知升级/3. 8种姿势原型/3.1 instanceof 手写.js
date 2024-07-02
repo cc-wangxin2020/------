@@ -21,3 +21,6 @@ console.log(instanceOf(cchild, CChild));
 console.log(instanceOf(cchild, Object));
 console.log(instanceOf(cchild, Date));
 console.log(instanceOf(cchild, Luren));
+
+console.log(Object instanceof Function);
+console.log(Function instanceof Object);

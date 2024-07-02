@@ -1,12 +1,12 @@
 const symbolSay = Symbol.for("say1");
 
-class Person { 
+class Person {
     static flag = "人";
     static getFlag() {
         return Person.flag;
     }
 
-    static [Symbol.for("symbolPro")](){
+    static [Symbol.for("symbolPro")]() {
         return "symbolPro"
     }
 
@@ -37,8 +37,12 @@ function getOwnPropertyStatics(_obj) {
     let result = [];
 
     let keys = Object.getOwnPropertyNames(_obj);
+    console.log(keys);
+    let keys2 = Object.getOwnPropertySymbols(_obj)
+    console.log(keys2);
     keys = keys.concat(Object.getOwnPropertySymbols(_obj));
     // const keys = Reflect.ownKeys(_obj)
+    console.log(keys);
     for (let i = 0; i < keys.length; ++i) {
         const key = keys[i];
         if (!KNOWN_STATICS[key]) {

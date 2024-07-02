@@ -8,5 +8,5 @@ arr.valueOf = function(){
 
 const obj = {};
 
- + arr + obj + arr + obj
-{} + arr
+console.log( + arr + obj + arr + obj);
+console.log(({} + arr));

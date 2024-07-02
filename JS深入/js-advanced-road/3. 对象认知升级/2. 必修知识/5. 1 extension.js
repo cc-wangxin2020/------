@@ -17,3 +17,13 @@ console.log("obj==", obj);
 console.log(Object.isExtensible(obj));
 console.log(Object.isExtensible(obj1));
 
+
+Object.defineProperty(obj, 'name', {
+  configurable: false,
+  writable:  true
+})
+console.log(Object.getOwnPropertyDescriptor(obj, 'name'));
+Object.defineProperty(obj, 'name', {
+  writable: true
+})
+console.log(Object.getOwnPropertyDescriptor(obj, 'name'));

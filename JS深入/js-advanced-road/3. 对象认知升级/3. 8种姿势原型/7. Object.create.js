@@ -14,4 +14,8 @@ if (typeof Object.create !== "function") {
         return new F();
     };
 }
-
+const parent = {
+    name: 'tom'
+}
+const obj = Object.create(null)
+console.log(Object.getPrototypeOf(obj));

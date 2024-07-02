@@ -3,3 +3,4 @@ a.x = a = {n:2};
 
 // 求a.x
 console.log(a.x)
+console.log(a);
