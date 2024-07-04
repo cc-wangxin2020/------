@@ -18,16 +18,27 @@
                 if (arr.length != 2) {
                     return obj;
                 }
-                obj[decodeURIComponent(arr[0])] = decodeURIComponent(arr[1]);
+                const key = decodeURIComponent(arr[0])
+                const value = decodeURIComponent(arr[1])
+                if (key in obj) {
+                    if (Array.isArray(obj[key])) {
+                        obj[key].push(value)
+                    } else {
+                        obj[key] = Array.of(obj[key])
+                        obj[key].push(value)
+                    }
+                } else {
+                    obj[key] = value;
+                }
                 return obj;
             }, {})
-
+        console.log(urtObj);
         function getQueryString(key) {
             return urtObj[key]
         }
 
 
-        
+
         console.log("words:", getQueryString("words")); // vue
         console.log("wordss:", getQueryString("wordss")); // null
 

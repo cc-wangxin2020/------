@@ -9,7 +9,7 @@ function mergeArray(arr1, arr2) {
         v = arr2[i];
         // 这个操作，
         // 详情参见4.2位运算符的妙用：奇偶数，色值换算，换值， 编码等
-        if (~arr.indexOf(v)) {
+        if (arr.includes(v)) {
             continue;
         }
         arr.push(v)

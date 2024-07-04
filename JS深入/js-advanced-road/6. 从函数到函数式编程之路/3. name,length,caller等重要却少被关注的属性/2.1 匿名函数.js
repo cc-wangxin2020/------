@@ -2,7 +2,7 @@ const person = {
     name: "Tom"
 };
 
-person.getName = function () {
+person.getName =  () => {
     return this.name
 }
 

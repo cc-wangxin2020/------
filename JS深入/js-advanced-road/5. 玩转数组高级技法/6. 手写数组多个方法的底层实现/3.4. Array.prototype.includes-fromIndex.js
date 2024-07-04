@@ -20,7 +20,7 @@ function ToIntegerOrInfinity(argument) {
     }
     return inter;
 }
-
+console.log(ToIntegerOrInfinity(-1));
 Array.prototype.includes = function (item, fromIndex) {
 
     // call, apply调用，严格模式

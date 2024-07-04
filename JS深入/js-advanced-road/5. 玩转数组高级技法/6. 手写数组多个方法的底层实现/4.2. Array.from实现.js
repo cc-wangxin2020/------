@@ -40,7 +40,7 @@ Array.from = function (arrayLike, mapFn, thisArg) {
     for (var i = 0; i < len; i++) {
         var value = items[i];
         if (mapFn) {
-            A[i] = typeof thisArg === 'undefined' ? mapFn(value, i) : mapFn.call(thisArg, value, i);
+            A[i] = typeof thisArg === 'undefined' ? (value, i) : mapFn.call(thisArg, value, i);
         } else {
             A[i] = value;
         }
@@ -55,18 +55,19 @@ Array.from = function (arrayLike, mapFn, thisArg) {
 
 
 function MyArray(length) {
-    const len = length * 2
-    return new Array(len)
+    const len = length * 3
+    return new Array(len).fill(0)
 }
 
 function MyObject(length) {
     return {
+        name: 'tom',
         length
     }
 }
 
 console.log("Array.from:MyArray", Array.from.call(MyArray, { length: 5 }))
 
-console.log("Array.from:MyObject", Array.from.call(MyObject, { length: 5 }))
+console.log("Array.from:MyObject", Array.from.call(MyObject, { length: 6 }))
 
 

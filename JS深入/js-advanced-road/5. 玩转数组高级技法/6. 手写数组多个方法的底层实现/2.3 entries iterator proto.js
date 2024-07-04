@@ -51,6 +51,10 @@ Array.prototype.keys = function () {
 
 const arr = [1, 2, 3];
 
+for (let i of arr) {
+    console.log(i);
+}
+
 var iter = arr.entries();
 console.log("iter.next().value:", iter.next().value);
 console.log("iter.next().value:", iter.next().value);

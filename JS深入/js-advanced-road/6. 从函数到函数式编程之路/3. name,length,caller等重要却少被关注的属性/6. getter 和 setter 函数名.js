@@ -9,5 +9,6 @@ const person = {
 }
 
 const descriptor = Object.getOwnPropertyDescriptor(person, "name2");
+console.log(descriptor);
 console.log("get.name:", descriptor.get.name);
 console.log("set.name:", descriptor.set.name);

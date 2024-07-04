@@ -8,11 +8,11 @@ function runPromises(promiseCreators, initData) {
 
 const initData = { name: 'name', pwd: 'pwd' }
 
-Promise.resolve(initData)
-    .then(data => login(data))
-    .then(data => getUserInfo(data))
-    .then(data => getOrders(data))
-    .then(data => console.log("orders", data))
+// Promise.resolve(initData)
+//     .then(data => login(data))
+//     .then(data => getUserInfo(data))
+//     .then(data => getOrders(data))
+//     .then(data => console.log("orders", data))
 
 function login(data) {
     console.log("login: data", data);
@@ -50,8 +50,8 @@ function getOrders(data) {
     })
 }
 
-// runPromises([login, getUserInfo, getOrders],
-//     initData)
-//     .then(res => {
-//         console.log("res", res);
-//     })
+runPromises([login, getUserInfo, getOrders],
+    initData)
+    .then(res => {
+        console.log("res", res);
+    })

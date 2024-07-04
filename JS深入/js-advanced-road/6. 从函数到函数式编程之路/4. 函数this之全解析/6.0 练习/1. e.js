@@ -16,9 +16,9 @@ var person = {
     logName2: () => logName()
 }
 
-logName();
-person.logName();
-person.logName2();
-logName.bind(obj)();
-logName2()
+logName(); // window
+person.logName(); // person
+person.logName2(); // window
+logName.bind(obj)(); // '张三'
+logName2() // undefiend
 

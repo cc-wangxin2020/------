@@ -9,3 +9,5 @@ console.log("array.indexOf ,,:", array2.indexOf(undefined) > -1);
 const array3 = [undefined];
 console.log("array.includes undefined:", array3.includes(undefined));
 console.log("array.indexOf undefined:", array3.indexOf(undefined) > -1);
+
+console.log(Object.prototype.hasOwnProperty.apply(array3, [0]));

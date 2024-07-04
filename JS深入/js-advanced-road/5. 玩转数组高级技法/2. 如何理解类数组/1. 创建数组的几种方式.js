@@ -9,16 +9,16 @@ const arr2 = new Array(1, 2, 3); // 1,2,3
 const arr3 = new Array("a"); //["a"]
 const arr4 = new Array(5) // [empty × 5]
 console.log("arr2 new Array==", arr2);
-console.log("arr3 new Array==", arr2);
-console.log("arr4 new Array==", arr3);
+console.log("arr3 new Array==", arr3);
+console.log("arr4 new Array==", arr4);
 
 // Array.of
-const arr5 = Array.of(5)  // [5]
+const arr5 = Array.of(...[1, 32, 2])  // [5]
 console.log("arr5 Array.of ==", arr5);
 
 // Array.from
 const arr6 = Array.from([1, 2, 3]); // [1,2,3]
-const arr7 = Array.from({ length: 3 }, function (value, index) {
+const arr7 = Array.from({ length: 1 }, function (value, index) {
     return index + 1
 }); // [1,2,3]
 const arr8 = Array.from({ 0: "a", 1: "b", 2: "c", length: 3 });  // ["a", "b", "c"]

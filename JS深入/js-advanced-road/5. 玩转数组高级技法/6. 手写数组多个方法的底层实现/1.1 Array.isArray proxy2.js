@@ -5,7 +5,7 @@ const log = console.log;
 
 log("__proto__:", proxy.__proto__ === Array.prototype)
 log("instanceof:", proxy instanceof Array)  
-
+log(Proxy.prototype)
 console.log("-------------------")
 log("toString", Object.prototype.toString.call(Proxy))
 
