@@ -66,3 +66,4 @@ var a1 = new Father();
 console.log("a1.attr:", a1.attr);
 console.log("a1.bankCard:", a1.bankCard);
 console.log("a3.eat:", a1.eat("馒头"))
+console.log(p2.__proto__.__proto__.__proto__.__proto__);

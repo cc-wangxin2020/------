@@ -10,6 +10,7 @@ function _curry(fn, len) {
     return function () {
         var args = oArgs.concat(slice.call(arguments));
         if (args.length >= len) {
+            console.log(this);
             return fn.apply(this, args);
         } else {
             return _curry.apply(this, [fn, len].concat(args))
@@ -24,5 +25,18 @@ function calcSum() {
 
 const calcSumCurry = curry(calcSum, 3, 3);
 
-console.log(calcSumCurry(4,5));
-console.log(calcSumCurry(4)(5));
+console.log(calcSumCurry(4, 5));
+// console.log(calcSumCurry(4)(5));
+
+
+function f1() {
+    console.log('f1:', this);
+    return function f2() {
+        console.log('f2:', this);
+    }
+}
+const obj = {
+    name: 'tom',
+    f1
+}
+obj.f1()()

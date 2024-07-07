@@ -14,3 +14,5 @@ console.log(Person.prototype);
 
 console.log(Person.prototype === p1.__proto__);
 
+function A(){}
+console.log(A.__proto__.__proto__.__proto__);

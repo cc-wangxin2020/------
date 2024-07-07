@@ -1,10 +1,11 @@
 
 class Logger {
+    name = 'Logger'
     log() {
         console.log("Logger::", ...arguments);
     }
 }
-
+Logger.prototype.name = 'Logger'
 
 class Animal {
     eat() {
@@ -13,7 +14,9 @@ class Animal {
 }
 
 class Person extends Animal {
-
+    eat() {
+        console.log("hhhhhh");
+    }
     walk() {
         console.log("Person:: is walking",);
     }
@@ -28,9 +31,10 @@ function mixin(targetProto, sourceProto) {
         }
     })
 }
-
 mixin(Person.prototype, Logger.prototype)
 
 console.log(Person.prototype);
 var person = new Person();
 person.log("log test")
+person.eat()
+console.log(Object.getOwnPropertyDescriptors(Logger.prototype));

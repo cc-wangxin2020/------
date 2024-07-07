@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="searchText">
+  <script>
+    document.getElementById('searchText').addEventListener('input', function () {
+      fn.call(this, 'hhhhh')
+    })
+    function thtottle(fn, delay) {
+      let timeout = null
+      return function () {
+        if (!timeout) {
+          timeout = setTimeout(() => {
+            fn.call(this, ...arguments)
+            timeout = null
+          }, delay)
+        }
+      }
+    }
+    function fetchContent(str) {
+      console.log(this);
+      console.log('模拟请求');
+      console.log(str);
+    }
+    const fn = thtottle(fetchContent, 1000)
+  </script>
+</body>
+
+</html>

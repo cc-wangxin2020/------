@@ -9,6 +9,7 @@ function _curry(fn, len) {
     var oArgs = slice.call(arguments, 2);
     return function () {
         var args = oArgs.concat(slice.call(arguments));
+        console.log(args);
         if (args.length >= len) {
             return fn.apply(this, args);
         } else {
@@ -19,11 +20,11 @@ function _curry(fn, len) {
 
 
 //使用
-function calcSum(num1, num2 = 2, num3) {
+function calcSum(num1, num2, num3) {
     return num1 + num2 + num3;
 }
-const calcSumCurry = curry(calcSum, 3);
+const calcSumCurry = curry(calcSum);
 
 const log = console.log;
-log(calcSumCurry(4, 5));
-log(calcSumCurry(4)(5));
+// log(calcSumCurry(4, 5));
+log(calcSumCurry()(5)(6)(3));

@@ -14,12 +14,14 @@ function Person(options) {
     Animal.call(this, options);
     this.name = options.name || "";
 }
-
+console.log(Person.prototype);
 // 设置原型
 Person.prototype = Object.create(Animal.prototype);
+console.log(Person.prototype);
 // 修复构造函数
 Person.prototype.constructor = Person;
-
+console.log(Object.getOwnPropertyDescriptors(Person.prototype));
+console.log(Object.getOwnPropertyDescriptors(Animal.prototype));
 Person.prototype.eat = function eat(something) {
     console.log(this.name, ":is eating", something)
 }
@@ -32,6 +34,5 @@ person.eat("大米");
 person.walk();
 
 person.testProperties.push("4")
-
 var person2 = new Person({ sex: 1, age: 18, name: "小红" });
 console.log(person2.testProperties)

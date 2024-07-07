@@ -37,5 +37,6 @@ p2.bankCard.push(30000);
 
 console.log("p1.name:", p1.name, "=p1.backCard:", p1.bankCard, "=", p1.eat("鲍鱼"));
 console.log("p2.name:", p2.name, "=p2.backCard:", p2.bankCard, "=", p2.eat("肉"));
-
+console.log(p2.shareAttr);
+console.log(p1.shareAttr);
 console.log(p1.__proto__)

@@ -1,6 +1,6 @@
 
 var AsyncFunction = Object.getPrototypeOf(async function () { }).constructor;
-
+console.log(Object.getPrototypeOf(async function () { }).constructor);
 function createAsyncFun(...args) {
     return new AsyncFunction(...args);
 }
