@@ -6,6 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <style id="ss-test">
+        .div {
+            background-color: red;
+            font-size: 30px;
+        }
+
+        div {
+            font-size: 26px
+        }
+    </style>
 </head>
 
 <body>
@@ -14,17 +24,6 @@
     </div>
     <div class="div">文本</div>
 
-            <style id="ss-test">
-
-                .div {
-                    background-color: red;
-                    font-size: 30px;
-                }
-
-                div {
-                    font-size: 26px
-                }
-            </style>
 
 
     <script>
@@ -32,12 +31,13 @@
         document.getElementById("btnUpdate").addEventListener("click", updateStyleNode)
 
         function updateStyleNode() {
+            console.log(111);
             const styleSheets = Array.from(document.styleSheets);
+            console.log(styleSheets);
             // ownerNode获得styleSheet对应的节点
-            const st = styleSheets.find(s=> s.ownerNode.id === "ss-test");
+            const st = styleSheets.find(s => s.ownerNode.id === "ss-test");
             // 选过选择器找到对应的rule
-            const rule = Array.from(st.rules).find(r=> r.selectorText === ".div");
-
+            const rule = Array.from(st.rules).find(r => r.selectorText === ".div");
             // 兼容性 
             const styleMap = rule.styleMap;
             styleMap.set("background-color", "blue");

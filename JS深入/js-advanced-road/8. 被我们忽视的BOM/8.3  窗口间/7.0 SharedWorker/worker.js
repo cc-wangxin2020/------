@@ -1,9 +1,9 @@
 var portList = [];
 
-onconnect = function(e) {
+onconnect = function (e) {
   var port = e.ports[0];
   ensurePorts(port);
-  port.onmessage = function(e) {
+  port.onmessage = function (e) {
     var data = e.data;
     disptach(port, data);
   };
@@ -21,3 +21,5 @@ function disptach(selfPort, data) {
     .filter(port => selfPort !== port)
     .forEach(port => port.postMessage(data));
 }
+
+console.log('portList:', portList);

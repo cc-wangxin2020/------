@@ -28,13 +28,14 @@
             const styleSheets = Array.from(document.styleSheets);
             const st = styleSheets.find(s => s.href.endsWith("2.3.1.css"));
             const rule = Array.from(st.rules).find(r => r.selectorText === ".div");
-
+            console.log(rule);
             // 兼容性 
             const styleMap = rule.styleMap;
+            console.log(styleMap);
             styleMap.set("background-color", "green");
 
         }
-        
+
 
     </script>
 

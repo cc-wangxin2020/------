@@ -27,17 +27,20 @@
             console.log("event-x 收到数据:", ev.detail);
         }
 
-        // 订阅
+        // // 订阅
         window._on("event-x", onEventX);
         window._once("event-once", ev => console.log("event-once 收到数据:", ev.detail));
 
-        // once
+        // // once
         window._emit("event-once", { uid: -100, message: "you love me" });
-        window._emit("event-once", { uid: -100, message: "you love me" });
-        // 订阅和取消订阅
+        window._emit("event-once", { uid: -101, message: "you love me" });
+        // // 订阅和取消订阅
         window._emit("event-x", { uid: 100, message: "i love you" })
+        window._emit("event-x", { uid: 101, message: "i love you" })
+        window._emit("event-x", { uid: 102, message: "i love you" })
+        // window._on('event-x', onEventX)
         window._off("event-x", onEventX);
-        window._emit("event-x", { uid: 100, message: "i love you" })
+        window._emit("event-x", { uid: 103, message: "i love you" })
 
     </script>
 

@@ -16,15 +16,15 @@
 
     <script>
 
-        btnTrigger.addEventListener("myEvent", function () {
-            console.log("DOM2: myEvent")
+        btnTrigger.addEventListener("myFirstEvent", function () {
+            console.log("DOM2: myFirstEvent")
         })
 
         btnTrigger.onmyEvent = function (event) {
             console.log("DOM0: myEvent")
         }
 
-        var event = new MouseEvent("myEvent");
+        var event = new MouseEvent("myFirstEvent");
         btnTrigger.dispatchEvent(event);
 
     </script>
