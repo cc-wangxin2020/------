@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./发布订阅模式.js"></script>
+  <script>
+    var emitter = new Emitter()
+    emitter.on('test', function (e) {
+      console.log('fn1', e);
+    })
+    // emitter.on('test', function (e) {
+    //   console.log('fn2', e);
+    // })
+    emitter.once('test2', function (e) {
+      console.log('test2', e);
+    })
+    emitter.emit('test', { name: 'tom', age: 18 })
+    emitter.emit('test', { name: 'jerry', age: 18 })
+    emitter.emit('test2', { name: 'tom', age: 18 })
+    emitter.emit('test2', { name: 'jerry', age: 18 })
+  </script>
+</body>
+
+</html>

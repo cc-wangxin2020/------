@@ -5,9 +5,9 @@ const p2 = new Promise((resolve, reject) => {
 });
 
 
-p2.then(1).then((res)=>{
-    console.log("res2",res)
+p2.then(1).then((res) => {
+    console.log("res2", res)
     return 2;
-}).catch((e)=>{
-    console.log("reject 错误：",e);
+}).catch((e) => {
+    console.log("reject 错误：", e);
 });

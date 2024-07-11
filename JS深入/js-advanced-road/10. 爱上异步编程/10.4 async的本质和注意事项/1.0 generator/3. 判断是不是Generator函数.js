@@ -6,6 +6,7 @@ function* numGenerator() {
   return 3;
 }
 
+console.log(numGenerator.constructor);
 // 推荐
 console.log(numGenerator.constructor === GeneratorFunction)
 // 不推荐

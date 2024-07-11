@@ -42,6 +42,7 @@
                 //创建上传数据
                 const formData = new FormData();
                 formData.append("file", file);
+                console.log(formData);
                 //上传文件
                 this.upload(formData);
             }
@@ -50,9 +51,9 @@
                 const xhr = new XMLHttpRequest();
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                       const result= JSON.parse(xhr.responseText);
-                       console.log("result:",result);
-                       uploadResultEle.innerText=xhr.responseText;
+                        const result = JSON.parse(xhr.responseText);
+                        console.log("result:", result);
+                        uploadResultEle.innerText = xhr.responseText;
                     }
                 };
 

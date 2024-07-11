@@ -1,7 +1,7 @@
 
 
 const p2 = new Promise((resolve, reject) => {
-    resolve(5);
+    // resolve(5);
     throw new Error("自定义错误")
 });
 
